@@ -1,0 +1,57 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', sans-serif;
+    text-align: center;
+}
+
+.logo {
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 700;
+    margin-top: 36px
+}
+
+.card {
+    margin: 72px auto 0;
+
+    width: 222px;
+    min-height: 333px;
+    border-radius: 16px;
+    
+    cursor: pointer;
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,.12);
+    transition: transform .6s, box-shadow .6s;
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome and Opera */
+  }
+
+.card:active {
+    transform: scale(.95);
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,.12);
+}
+
+.card__placeholder {
+    padding-top: 110px;
+}
+
+.card__text {
+    padding-top: 32px;
+    font-size: 32px;
+    color: #D9D6D2;
+    font-weight: 700;
+}
+
+.card__plus {
+    margin: 0 auto;
+    width: 42px;
+    height: 42px;
+    background-image: url("plus.svg");
+    background-repeat: no-repeat;
+}

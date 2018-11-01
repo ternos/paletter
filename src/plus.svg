@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="42px" height="42px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="iPhone-X-Copy-2" transform="translate(-167.000000, -263.000000)" fill="#D9D6D2">
+            <g id="Group-2" transform="translate(77.000000, 153.000000)">
+                <path d="M115,127 L130,127 C131.104569,127 132,127.895431 132,129 L132,133 C132,134.104569 131.104569,135 130,135 L115,135 L115,150 C115,151.104569 114.104569,152 113,152 L109,152 C107.895431,152 107,151.104569 107,150 L107,135 L92,135 C90.8954305,135 90,134.104569 90,133 L90,129 C90,127.895431 90.8954305,127 92,127 L107,127 L107,112 C107,110.895431 107.895431,110 109,110 L113,110 C114.104569,110 115,110.895431 115,112 L115,127 Z" id="plus"></path>
+            </g>
+        </g>
+    </g>
+</svg>
