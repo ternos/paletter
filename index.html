@@ -8,16 +8,76 @@
     <link rel="stylesheet" href="src/styles.css"> 
 </head>
 <body>
+    
+
     <section id="logo">
-        <div class="logo">paletter</div>
+        <div class="logo noselect">палеттер.</div>
     </section>
     <section>
         <div class="card noselect">
-            <div class="card__placeholder">
-                <div class="card__plus"></div>
-                <div class="card__text">Add<br/>any&nbsp;image</div>
+            <div class="card__placeholder noselect">
+                <div class="card__text noselect"></div>
+                <div class="card__meta noselect">Click to copy</div>
             </div>
         </div>
     </section>
+
+    <script type="text/javascript">
+        var url_string = window.location.href
+        var url = new URL(url_string);
+        var color = url.searchParams.get("hex");
+        console.log(color);
+
+        var card = document.querySelector('.card')
+        card.style.backgroundColor = "#" + color;
+        var cardText = document.querySelector('.card__text')
+        cardText.textContent = "#" + color
+        // document.querySelector("body").style.backgroundColor = "#" + color + "10"
+
+        function css2rgb (css) {
+            if (css.length === 4) {
+                var r = css[1]
+                var g = css[2]
+                var b = css[3]
+                css = '#' + r + r + g + g + b + b
+            }
+
+            return [
+                parseInt(css.substr(1,2), 16),
+                parseInt(css.substr(3,2), 16),
+                parseInt(css.substr(5,2), 16),
+            ]
+        }
+
+        var rgbArray = css2rgb(color)
+
+        var r = rgbArray[0],
+            g = rgbArray[1],
+            b = rgbArray[2]
+
+        var bColor = "rgb(" + r + "," + g + "," + b + ")";
+        var y = 0.2126*r + 0.7152*g + 0.0722*b;
+        var textColor = y < 150 ? 'white' : 'black';
+        card.style.color = textColor
+
+        function copyToClipboard() {
+            navigator.clipboard.writeText("#" + color)
+                .then(() => {
+                    document.querySelector('.card__meta').textContent = (
+                        Math.random() > 0.5 ? "Copied!" : "Yeah, we've copied it!"
+                    )
+                })
+                .catch(err => {
+                    console.log('Something went wrong', err);
+                });
+        }
+
+        window.addEventListener('click', (o) => {
+            o.path.forEach(el => {
+                if(el === card)
+                    copyToClipboard()  
+            });
+        })
+    </script>
 </body>
 </html>
