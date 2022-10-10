@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Палеттер.">
@@ -25,7 +26,7 @@
         <div class="card noselect">
             <div class="card__placeholder noselect">
                 <div class="card__text noselect"></div>
-                <div class="card__meta noselect">Click to copy</div>
+<!--                 <div class="card__meta noselect">Click to copy</div> -->
             </div>
         </div>
     </section>
@@ -40,7 +41,10 @@
         card.style.backgroundColor = "#" + color;
         var cardText = document.querySelector('.card__text')
         cardText.textContent = "#" + color
-        // document.querySelector("body").style.backgroundColor = "#" + color + "10"
+//         var body = document.querySelector('body')
+//         body.style.backgroundColor = "#" + color;
+        document.querySelector("body").style.backgroundColor = "#" + color + "10"
+        document.querySelectorAll('meta[name=theme-color]')[0].content = "#" + color + "10"
 
         function css2rgb (css) {
             if (css.length === 4) {
